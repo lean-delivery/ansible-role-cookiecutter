@@ -21,7 +21,7 @@ platforms:
     capabilities:
       - SYS_ADMIN
     groups:
-      - ansible_role_docker_ct
+      - group_ct
 provisioner:
   name: {{ cookiecutter.provisioner_name }}
   lint:
@@ -30,5 +30,8 @@ scenario:
   name: default
 verifier:
   name: {{ cookiecutter.verifier_name }}
+  options:
+    verbose: true
+  directory: ../resources/{{ cookiecutter.verifier_directory }}/
   lint:
     name: {{ cookiecutter.verifier_lint_name }}

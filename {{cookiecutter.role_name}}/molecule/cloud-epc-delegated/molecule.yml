@@ -1,37 +1,41 @@
 ---
 dependency:
-  name: galaxy
+  name: {{ cookiecutter.dependency_name }}
   options:
     role-file: requirements.yml
 driver:
   name: delegated
 lint:
-  name: yamllint
+  name: {{ cookiecutter.lint_name }}
   options:
-    config-file: molecule/yamllint.yml
+    config-file: ../../.yamllint.yml
 platforms:
-  - name: test-epc-centos7-{{ cookiecutter.role_name }}
+  - name: test-{{ cookiecutter.role_name }}-centos7
     image: CentOS7_64-bit
     shape: small
     region: EPAM-BY2
     wait_timeout: 1800
     groups:
-      - ansible_role_docker_ct
+      - group_ct
 provisioner:
-  name: ansible
+  name: {{ cookiecutter.provisioner_name }}
+  playbooks:
+    create: ../resources/playbooks/create.yml
+    destroy: ../resources/playbooks/destroy.yml
   config_options:
     ssh_connection:
       control_path: "/var/ans/%%h"
   lint:
-    name: ansible-lint
+    name: {{ cookiecutter.provisioner_lint_name }}
   env:
     ANSIBLE_LIBRARY:
       /home/gitlab-runner/.local/lib/python2.7/site-packages/epam_ansible
 scenario:
-  name: cloud-aws-centos
+  name: cloud-epc-delegated
 verifier:
-  name: testinfra
+  name: {{ cookiecutter.verifier_name }}
   options:
-    verbose: True
+    verbose: true
+  directory: ../resources/{{ cookiecutter.verifier_directory }}/
   lint:
-    name: flake8
+    name: {{ cookiecutter.verifier_lint_name }}
