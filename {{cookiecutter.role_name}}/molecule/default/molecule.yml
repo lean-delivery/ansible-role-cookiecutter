@@ -6,9 +6,9 @@ driver:
 lint:
   name: {{ cookiecutter.lint_name }}
   options:
-    config-file: ../../.yamllint.yml
+    config-file: .yamllint
 platforms:
-  - name: test-docker-centos7-{{ cookiecutter.role_name }}
+  - name: test-centos7-{{ cookiecutter.role_name }}
     image: leandelivery/docker-systemd:centos7
     privileged: True
     security_opts:
@@ -22,6 +22,20 @@ platforms:
       - SYS_ADMIN
     groups:
       - group_ct
+  - name: test-ubuntu1804-{{ cookiecutter.role_name }}
+    image: leandelivery/docker-systemd:ubuntu-18.04
+    privileged: True
+    security_opts:
+      - seccomp=unconfined
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    tmpfs:
+      - /tmp
+      - /run
+    capabilities:
+      - SYS_ADMIN
+    groups:
+      - ansible_role_gitlab_runner_ubuntu_ct
 provisioner:
   name: {{ cookiecutter.provisioner_name }}
   lint:

@@ -17,8 +17,7 @@ install:
   - ansible --version
 
 script:
+  - cookiecutter --no-input .
+  - cd default_role
   - ansible-lint -c .ansible-lint `find . -regex ".*\.\(yml\)"`
-  - molecule test -s default
-
-notifications:
-  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  - molecule test

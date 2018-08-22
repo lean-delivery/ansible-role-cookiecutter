@@ -8,20 +8,28 @@ driver:
 lint:
   name: {{ cookiecutter.lint_name }}
   options:
-    config-file: ../../.yamllint.yml
+    config-file: .yamllint
 platforms:
-  - name: test-{{ cookiecutter.role_name }}-centos7
+  - name: test-epc-centos7-{{ cookiecutter.role_name }}
     image: CentOS7_64-bit
     shape: small
     region: EPAM-BY2
     wait_timeout: 1800
     groups:
-      - group_ct
+      - rhel_family
+  - name: test-epc-ubuntu1804-{{ cookiecutter.role_name }}
+    image: Ubuntu18.04_64-bit
+    shape: small
+    region: EPAM-BY2
+    wait_timeout: 1800
+    groups:
+      - debian_family
 provisioner:
-  name: {{ cookiecutter.provisioner_name }}
+  name: ansible
   playbooks:
-    create: ../resources/playbooks/create.yml
-    destroy: ../resources/playbooks/destroy.yml
+    create: ../resources/provisioning/create.yml
+    prepare: ../resources/provisioning/prepare.yml
+    destroy: ../resources/provisioning/destroy.yml
   config_options:
     ssh_connection:
       control_path: "/var/ans/%%h"
