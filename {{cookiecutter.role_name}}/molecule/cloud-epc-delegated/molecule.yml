@@ -10,14 +10,14 @@ lint:
   options:
     config-file: .yamllint
 platforms:
-  - name: test-epc-centos7-{{ cookiecutter.role_name }}
+  - name: test-centos7-{{ cookiecutter.role_name }}
     image: CentOS7_64-bit
     shape: small
     region: EPAM-BY2
     wait_timeout: 1800
     groups:
       - rhel_family
-  - name: test-epc-ubuntu1804-{{ cookiecutter.role_name }}
+  - name: test-ubuntu1804-{{ cookiecutter.role_name }}
     image: Ubuntu18.04_64-bit
     shape: small
     region: EPAM-BY2
@@ -44,6 +44,6 @@ verifier:
   name: {{ cookiecutter.verifier_name }}
   options:
     verbose: true
-  directory: ../resources/{{ cookiecutter.verifier_directory }}/
+  directory: ../resources/tests/
   lint:
     name: {{ cookiecutter.verifier_lint_name }}

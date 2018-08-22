@@ -3,7 +3,7 @@
 - name: Destroy
   hosts: localhost
   connection: local
-  gather_facts: false
+  gather_facts: False
   no_log: "{{ not (lookup('env', 'MOLECULE_DEBUG') | bool or molecule_yml.provisioner.log|default(false) | bool) }}"
   tasks:
     # Developer must implement.
