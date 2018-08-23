@@ -8,7 +8,7 @@ lint:
   options:
     config-file: .yamllint
 platforms:
-  - name: test-centos7-{{ cookiecutter.role_name }}
+  - name: test-docker-centos7-{{ cookiecutter.role_name }}
     image: leandelivery/docker-systemd:centos7
     privileged: True
     security_opts:
@@ -22,7 +22,7 @@ platforms:
       - SYS_ADMIN
     groups:
       - rhel_family
-  - name: test-ubuntu1804-{{ cookiecutter.role_name }}
+  - name: test-docker-ubuntu1804-{{ cookiecutter.role_name }}
     image: leandelivery/docker-systemd:ubuntu-18.04
     privileged: True
     security_opts:
