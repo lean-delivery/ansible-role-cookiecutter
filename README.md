@@ -1,4 +1,4 @@
-cookiecutter-ansible-role
+ansible-development-kit
 =========
 
 ## How to use:
