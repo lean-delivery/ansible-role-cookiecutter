@@ -24,6 +24,7 @@ molecule init template --url https://github.com/lean-delivery/ansible-developmen
 In order not to provide the same answers for cookecutter's questions it makes sense to put in the role's directory a config file `.cookiecutter.yml` like this:
 
 ```yaml
+---
 default_context:
   role_name: ansible-role-example
 ```
