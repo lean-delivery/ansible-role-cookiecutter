@@ -32,7 +32,7 @@ AWS role from cookiecutter test:
     - cookiecutter -f --no-input .
     - cd default_role
     - sed -i 's/ansible-role-//' molecule/cloud-aws-direct/playbook.yml
-    - molecule test -s cloud-aws-delegated
+    - molecule test -s cloud-aws-direct
   tags:
     - aws
 
