@@ -13,14 +13,14 @@ platforms:
   - name: test-epc-centos7-{{ cookiecutter.role_name }}
     image: CentOS7_64-bit
     shape: small
-    region: EPAM-BY2
+    region: {{ cookiecutter.epc_region }}
     wait_timeout: 3600
     groups:
       - rhel_family
   - name: test-epc-ubuntu1804-{{ cookiecutter.role_name }}
     image: Ubuntu18.04_64-bit
     shape: small
-    region: EPAM-BY2
+    region: {{ cookiecutter.epc_region }}
     wait_timeout: 3600
     groups:
       - debian_family

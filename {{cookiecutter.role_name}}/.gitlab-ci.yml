@@ -32,7 +32,7 @@ Docker {{ cookiecutter.role_name }}:
 
 AWS {{ cookiecutter.role_name }}:
   variables:
-    AWS_REGION: us-east-1
+    AWS_REGION: {{ cookiecutter.aws_region }}
   stage: deployment test
   script:
     - molecule test -s cloud-aws-direct
@@ -41,7 +41,7 @@ AWS {{ cookiecutter.role_name }}:
 
 EPC {{ cookiecutter.role_name }}:
   variables:
-    EPC_REGION: EPAM-BY2
+    EPC_REGION: {{ cookiecutter.epc_region }}
   stage: deployment test
   script:
     - molecule test -s cloud-epc-delegated

@@ -12,9 +12,9 @@ lint:
 platforms:
 
   - name: test-aws-Windows2016-{{ cookiecutter.role_name }}
-    aws_image_id: ami-0f4c7e570f044b46f
-    aws_region: us-east-1
-    instance_type: m5.large
+    aws_image_id: {{ cookiecutter.image_windows2016 }}
+    aws_region: {{ cookiecutter.aws_region }}
+    instance_type: {{ cookiecutter.instance_type }}
     vpc_subnet_id: {{ cookiecutter.vpc_subnet_id }}
     assign_public_ip: False
     spot_price: 0.2

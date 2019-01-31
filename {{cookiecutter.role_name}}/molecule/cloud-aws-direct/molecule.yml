@@ -11,12 +11,12 @@ lint:
     config-file: .yamllint
 platforms:
   - name: test-aws-centos7-{{ cookiecutter.role_name }}
-    image: ami-9887c6e7
-    instance_type: m5.large
-    region: us-east-1
+    image: {{ cookiecutter.image_centos7 }}
+    instance_type: {{ cookiecutter.instance_type }}
+    region: {{ cookiecutter.aws_region }}
     vpc_subnet_id: {{ cookiecutter.vpc_subnet_id }}
     assign_public_ip: False
-    spot_price: 0.04
+    spot_price: {{ cookiecutter.spot_price }}
     security_group_name:
       - default
     wait_timeout: 1800
@@ -25,12 +25,12 @@ platforms:
       - rhel_family
 
   - name: test-aws-centos6-{{ cookiecutter.role_name }}
-    image: ami-1585c46a
+    image: {{ cookiecutter.image_centos6 }}
     instance_type: m4.large
-    region: us-east-1
+    region: {{ cookiecutter.aws_region }}
     vpc_subnet_id: {{ cookiecutter.vpc_subnet_id }}
     assign_public_ip: False
-    spot_price: 0.04
+    spot_price: {{ cookiecutter.spot_price }}
     security_group_name:
       - default
     wait_timeout: 1800
@@ -39,40 +39,40 @@ platforms:
      - rhel_family
 
   - name: test-aws-ubuntu16-{{ cookiecutter.role_name }}
-    image: ami-09677e0a6b14905b0
-    instance_type: m5.large
-    region: us-east-1
+    image: {{ cookiecutter.image_ubuntu16 }}
+    instance_type: {{ cookiecutter.instance_type }}
+    region: {{ cookiecutter.aws_region }}
     vpc_subnet_id: {{ cookiecutter.vpc_subnet_id }}
     assign_public_ip: False
     security_group_name:
       - default
-    spot_price: 0.04
+    spot_price: {{ cookiecutter.spot_price }}
     wait_timeout: 1800
     ssh_user: ubuntu
     groups:
       - debian_family
 
   - name: test-aws-ubuntu18-{{ cookiecutter.role_name }}
-    image: ami-012fd5eb46f56731f
-    instance_type: m5.large
-    region: us-east-1
+    image: {{ cookiecutter.image_ubuntu18 }}
+    instance_type: {{ cookiecutter.instance_type }}
+    region: {{ cookiecutter.aws_region }}
     vpc_subnet_id: {{ cookiecutter.vpc_subnet_id }}
     assign_public_ip: False
     security_group_name:
       - default
-    spot_price: 0.04
+    spot_price: {{ cookiecutter.spot_price }}
     wait_timeout: 1800
     ssh_user: ubuntu
     groups:
       - debian_family
 
   - name: test-aws-Debian9-{{ cookiecutter.role_name }}
-    image: ami-003f19e0e687de1cd
-    instance_type: m5.large
-    region: us-east-1
+    image: {{ cookiecutter.image_debian9 }}
+    instance_type: {{ cookiecutter.instance_type }}
+    region: {{ cookiecutter.aws_region }}
     vpc_subnet_id: {{ cookiecutter.vpc_subnet_id }}
     assign_public_ip: False
-    spot_price: 0.04
+    spot_price: {{ cookiecutter.spot_price }}
     security_group_name:
       - default
     wait_timeout: 1800
@@ -81,12 +81,12 @@ platforms:
       - debian_family
 
   - name: test-aws-Debian8-{{ cookiecutter.role_name }}
-    image: ami-b14ba7a7
-    instance_type: m5.large
-    region: us-east-1
+    image: {{ cookiecutter.image_debian8 }}
+    instance_type: {{ cookiecutter.instance_type }}
+    region: {{ cookiecutter.aws_region }}
     vpc_subnet_id: {{ cookiecutter.vpc_subnet_id }}
     assign_public_ip: False
-    spot_price: 0.04
+    spot_price: {{ cookiecutter.spot_price }}
     security_group_name:
       - default
     wait_timeout: 1800
