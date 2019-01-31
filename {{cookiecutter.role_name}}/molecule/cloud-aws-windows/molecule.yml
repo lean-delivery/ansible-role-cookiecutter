@@ -49,6 +49,5 @@ verifier:
   name: {{ cookiecutter.verifier_name }}
   options:
     verbose: true
-  directory: ../resources/wintests/
   lint:
     name: {{ cookiecutter.verifier_lint_name }}
