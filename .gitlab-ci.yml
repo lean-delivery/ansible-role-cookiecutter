@@ -31,7 +31,7 @@ AWS role from cookiecutter test:
   script:
     - cookiecutter -f --no-input .
     - cd default_role
-    - sed -i 's/ansible-role-//' molecule/cloud-aws-delegated/playbook.yml
+    - sed -i 's/ansible-role-//' molecule/cloud-aws-direct/playbook.yml
     - molecule test -s cloud-aws-delegated
   tags:
     - aws
