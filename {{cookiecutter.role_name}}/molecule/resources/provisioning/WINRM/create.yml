@@ -20,10 +20,10 @@
 
     - name: Start Windows instances
       ec2:
-        region: '{{ item.region }}'
-        image: '{{ item.image }}'
+        region: '{{ item.aws_region }}'
+        image: '{{ item.aws_image_id }}'
         instance_type: '{{ item.instance_type }}'
-        group: '{{ item.security_group_name }}'
+        group: '{{ item.aws_sec_group }}'
         assign_public_ip: '{{ item.assign_public_ip | default(True) }}'
         wait: True
         wait_timeout: '{{ item.wait_timeout | default(600) }}'

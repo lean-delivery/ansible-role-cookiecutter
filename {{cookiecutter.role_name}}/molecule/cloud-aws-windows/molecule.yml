@@ -12,13 +12,13 @@ lint:
 platforms:
 
   - name: test-aws-Windows2016-{{ cookiecutter.role_name }}
-    image: ami-0f4c7e570f044b46f
-    region: us-east-1
+    aws_image_id: ami-0f4c7e570f044b46f
+    aws_region: us-east-1
     instance_type: m5.large
     vpc_subnet_id: {{ cookiecutter.vpc_subnet_id }}
     assign_public_ip: False
     spot_price: 0.2
-    security_group_name:
+    aws_sec_group:
       - default
     wait_timeout: 1800
     groups:
