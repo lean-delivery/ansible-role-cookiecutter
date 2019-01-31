@@ -1,0 +1,45 @@
+---
+dependency:
+  name: {{ cookiecutter.dependency_name }}
+  options:
+    role-file: requirements.yml
+driver:
+  name: ec2
+lint:
+  name: {{ cookiecutter.lint_name }}
+  options:
+    config-file: .yamllint
+platforms:
+
+  - name: test-aws-Windows2016-{{ cookiecutter.role_name }}
+    image: ami-0f4c7e570f044b46f
+    region: us-east-1
+    instance_type: m5.large
+    vpc_subnet_id: {{ cookiecutter.vpc_subnet_id }}
+    assign_public_ip: False
+    spot_price: 0.2
+    security_group_name:
+      - default
+    wait_timeout: 1800
+    groups:
+      - windows
+
+provisioner:
+  name: ansible
+  log: False
+  playbooks:
+    create: ../resources/provisioning/WINRM/create.yml
+    destroy: ../resources/provisioning/WINRM/destroy.yml
+  lint:
+    name: {{ cookiecutter.provisioner_lint_name }}
+  env:
+    ANSIBLE_LIBRARY: ${ANSIBLE_LIBRARY}
+scenario:
+  name: cloud-aws-direct
+verifier:
+  name: {{ cookiecutter.verifier_name }}
+  options:
+    verbose: true
+  directory: ../resources/tests/
+  lint:
+    name: {{ cookiecutter.verifier_lint_name }}
