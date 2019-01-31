@@ -35,7 +35,7 @@ provisioner:
   env:
     ANSIBLE_LIBRARY: ${ANSIBLE_LIBRARY}
 scenario:
-  name: cloud-aws-direct
+  name: cloud-aws-windows
 verifier:
   name: {{ cookiecutter.verifier_name }}
   options:
