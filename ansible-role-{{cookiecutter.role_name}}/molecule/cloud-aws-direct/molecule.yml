@@ -12,6 +12,7 @@ lint:
 platforms:
   - name: test-aws-centos7-{{ cookiecutter.role_name }}
     image: {{ cookiecutter.image_centos7 }}
+    platform: centos7
     instance_type: {{ cookiecutter.instance_type }}
     region: {{ cookiecutter.aws_region }}
     vpc_subnet_id: {{ cookiecutter.vpc_subnet_id }}
@@ -40,6 +41,7 @@ platforms:
 
   - name: test-aws-ubuntu16-{{ cookiecutter.role_name }}
     image: {{ cookiecutter.image_ubuntu16 }}
+    platform: ubuntu16
     instance_type: {{ cookiecutter.instance_type }}
     region: {{ cookiecutter.aws_region }}
     vpc_subnet_id: {{ cookiecutter.vpc_subnet_id }}
@@ -54,6 +56,7 @@ platforms:
 
   - name: test-aws-ubuntu18-{{ cookiecutter.role_name }}
     image: {{ cookiecutter.image_ubuntu18 }}
+    platform: ubuntu18
     instance_type: {{ cookiecutter.instance_type }}
     region: {{ cookiecutter.aws_region }}
     vpc_subnet_id: {{ cookiecutter.vpc_subnet_id }}
@@ -80,19 +83,19 @@ platforms:
     groups:
       - debian_family
 
-  - name: test-aws-Debian8-{{ cookiecutter.role_name }}
-    image: {{ cookiecutter.image_debian8 }}
-    instance_type: {{ cookiecutter.instance_type }}
-    region: {{ cookiecutter.aws_region }}
-    vpc_subnet_id: {{ cookiecutter.vpc_subnet_id }}
-    assign_public_ip: false
-    spot_price: {{ cookiecutter.spot_price }}
-    security_group_name:
-      - default
-    wait_timeout: 1800
-    ssh_user: admin
-    groups:
-      - debian_family
+  # - name: test-aws-Debian8-{{ cookiecutter.role_name }}
+  #   image: {{ cookiecutter.image_debian8 }}
+  #   instance_type: {{ cookiecutter.instance_type }}
+  #   region: {{ cookiecutter.aws_region }}
+  #   vpc_subnet_id: {{ cookiecutter.vpc_subnet_id }}
+  #   assign_public_ip: false
+  #   spot_price: {{ cookiecutter.spot_price }}
+  #   security_group_name:
+  #     - default
+  #   wait_timeout: 1800
+  #   ssh_user: admin
+  #   groups:
+  #     - debian_family
 
 provisioner:
   name: ansible
