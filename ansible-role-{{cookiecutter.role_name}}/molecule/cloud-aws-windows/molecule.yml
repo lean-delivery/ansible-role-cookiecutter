@@ -12,6 +12,7 @@ lint:
 platforms:
 
   - name: test-aws-Windows2016-{{ cookiecutter.role_name }}
+    aws_image_id: {{ cookiecutter.image_windows2016 }}
     platform: windows2016core
     aws_region: {{ cookiecutter.aws_region }}
     instance_type: {{ cookiecutter.instance_type }}
@@ -25,6 +26,7 @@ platforms:
       - windows
 
   - name: test-aws-Windows2019-{{ cookiecutter.role_name }}
+    aws_image_id: {{ cookiecutter.image_windows2019 }}
     platform: windows2019core
     aws_region: {{ cookiecutter.aws_region }}
     instance_type: {{ cookiecutter.instance_type }}
