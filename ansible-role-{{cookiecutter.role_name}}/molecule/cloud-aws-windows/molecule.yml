@@ -41,7 +41,7 @@ platforms:
 {% raw -%}
 provisioner:
   name: ansible
-  log: true
+  log: false
   connection_options:
     ansible_connection: winrm
   inventory:
