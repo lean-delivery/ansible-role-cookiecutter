@@ -83,20 +83,6 @@ platforms:
     groups:
       - debian_family
 
-  # - name: test-aws-Debian8-{{ cookiecutter.role_name }}
-  #   image: {{ cookiecutter.image_debian8 }}
-  #   instance_type: {{ cookiecutter.instance_type }}
-  #   region: {{ cookiecutter.aws_region }}
-  #   vpc_subnet_id: {{ cookiecutter.vpc_subnet_id }}
-  #   assign_public_ip: false
-  #   spot_price: {{ cookiecutter.spot_price }}
-  #   security_group_name:
-  #     - default
-  #   wait_timeout: 1800
-  #   ssh_user: admin
-  #   groups:
-  #     - debian_family
-
 provisioner:
   name: ansible
   log: false
