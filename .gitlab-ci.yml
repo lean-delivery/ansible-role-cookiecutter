@@ -49,7 +49,7 @@ AWS Windows role from cookiecutter test:
   tags:
     - aws
 
-EPC role from cookiecutter test:
+.EPC role from cookiecutter test:
   variables:
     EPC_REGION: EPAM-BY2
   stage: deployment test
