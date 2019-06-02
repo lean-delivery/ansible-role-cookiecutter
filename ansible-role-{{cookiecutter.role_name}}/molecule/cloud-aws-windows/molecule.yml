@@ -44,9 +44,7 @@ provisioner:
   log: false
   config_options:
     defaults:
-      callback_whitelist: profile_tasks
-      bin_ansible_callbacks: true
-      stdout_callback: profile_tasks
+      callback_whitelist: profile_roles,profile_tasks,timer
   connection_options:
     ansible_connection: winrm
   inventory:
