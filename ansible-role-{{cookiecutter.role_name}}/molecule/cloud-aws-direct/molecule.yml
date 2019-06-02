@@ -90,8 +90,8 @@ provisioner:
   log: false
   config_options:
     defaults:
-      bin_ansible_callbacks: true
-      stdout_callback: profile_tasks
+      callback_whitelist: profile_tasks
+      # bin_ansible_callbacks: true
   playbooks:
     create: ../resources/provisioning/AWS/create.yml
     prepare: ../resources/provisioning/AWS/prepare.yml

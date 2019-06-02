@@ -51,7 +51,7 @@ AWS Windows {{ cookiecutter.role_name }}:
   tags:
     - aws
 
-EPC {{ cookiecutter.role_name }}:
+.EPC {{ cookiecutter.role_name }}:
   variables:
     EPC_REGION: {{ cookiecutter.epc_region }}
   stage: deployment test
