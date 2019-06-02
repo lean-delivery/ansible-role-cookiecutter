@@ -25,7 +25,7 @@ Lint:
   tags:
     - aws
 
-.AWS role from cookiecutter test:
+AWS role from cookiecutter test:
   variables:
     AWS_REGION: us-east-1
   stage: deployment test
