@@ -88,6 +88,10 @@ platforms:
 provisioner:
   name: ansible
   log: false
+  config_options:
+    defaults:
+      bin_ansible_callbacks: true
+      stdout_callback: profile_tasks
   playbooks:
     create: ../resources/provisioning/AWS/create.yml
     prepare: ../resources/provisioning/AWS/prepare.yml

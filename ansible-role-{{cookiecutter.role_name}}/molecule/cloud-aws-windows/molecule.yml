@@ -42,6 +42,10 @@ platforms:
 provisioner:
   name: ansible
   log: false
+  config_options:
+    defaults:
+      bin_ansible_callbacks: true
+      stdout_callback: profile_tasks
   connection_options:
     ansible_connection: winrm
   inventory:
