@@ -90,7 +90,7 @@ provisioner:
   log: false
   config_options:
     defaults:
-      callback_whitelist: profile_roles,profile_tasks,timer
+      callback_whitelist: profile_roles,profile_tasks
   playbooks:
     create: ../resources/provisioning/AWS/create.yml
     prepare: ../resources/provisioning/AWS/prepare.yml
