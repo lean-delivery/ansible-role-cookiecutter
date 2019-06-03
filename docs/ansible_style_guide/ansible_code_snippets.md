@@ -43,6 +43,14 @@ There are different ways to handle these issues both in the same playbook or pla
     - default.yml
   loop_control:
     loop_var: platform_vars
+
+- name: Load a variable file based on the service manager
+  include_vars: '{{ service_manager }}'
+  with_first_found:
+    - '{{ ansible_service_mgr }}.yml'
+    - systemv.yml
+  loop_control:
+    loop_var: service_manager
 ```
 
 ### Tasks Separation
@@ -60,20 +68,19 @@ There are different ways to handle these issues both in the same playbook or pla
   when: ansible_os_family == 'RedHat'
  
 # good
-- name: Load a variable file based on the OS type, or a default if not found
-  include_vars: '{{ platform_vars }}'
+- name: Configure and install packages for current OS
+  include_tasks: '{{ platform_tasks }}'
   with_first_found:
     - '{{ ansible_os_family }}.yml'
-    - '{{ ansible_distribution }}.yml'
-    - default.yml
+    - not_supported.yml
   loop_control:
-    loop_var: platform_vars
+    loop_var: platform_tasks
 ```
 
 ### Why?
 {: .no_toc }
 
-The Ansible developers have a good understanding of how the playbooks work and where they look for certain files. Following these practices will avoid a lot of problems.
+The way of tasks and variables separation using dynamic includes is more flexible and it's easier to support. For example, to add new OS support you just need to put an additional file into Ansible role with corresponding name and content without changing the exact code of Ansible role or playbook.
 
 ### Why Doesn't Your Style Follow Theirs?
 
