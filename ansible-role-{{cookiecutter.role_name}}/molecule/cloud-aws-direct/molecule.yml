@@ -113,7 +113,7 @@ platforms:
     wait_timeout: 1800
     groups:
       - windows
-
+{% raw -%}
 provisioner:
   name: ansible
   log: true
@@ -127,6 +127,7 @@ provisioner:
         ansible_password: "{{ lookup('env', 'WINRM_ADMIN_PWD') | default('M0leCule123!', true) }}"
         ansible_winrm_transport: credssp
         ansible_winrm_server_cert_validation: ignore
+{%- endraw %}
   playbooks:
     create: ../resources/provisioning/AWS/create.yml
     prepare: ../resources/provisioning/AWS/prepare.yml
