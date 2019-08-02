@@ -30,6 +30,6 @@
     "image_windows2019": "ami-0477b9335a5a75438",
     "instance_type": "m5.large",
     "spot_price": "0.04",
-    "linux_platform": "true",
-    "windows_platform": "false"
+    "linux_platform": true,
+    "windows_platform": false
 }
