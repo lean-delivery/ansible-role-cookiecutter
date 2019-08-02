@@ -11,7 +11,7 @@ lint:
     config-file: .yamllint
 platforms:
 
-{%- if cookiecutter.linux_platform == "true" %}
+{%- if cookiecutter.linux_tests == "true" %}
   - name: test-aws-centos7-{{ cookiecutter.role_name }}
     image: {{ cookiecutter.image_centos7 }}
     platform: centos7
@@ -88,7 +88,7 @@ platforms:
       - debian_family
 {% endif -%}
 
-{%- if cookiecutter.windows_platform == "true" %}
+{%- if cookiecutter.windows_tests == "true" %}
   - name: test-aws-Windows2016-{{ cookiecutter.role_name }}
     aws_image_id: {{ cookiecutter.image_windows2016 }}
     platform: windows2016core
