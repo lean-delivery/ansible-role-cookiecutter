@@ -11,6 +11,7 @@ lint:
     config-file: .yamllint
 platforms:
 
+{% if cookiecutter.linux_platform -%}
   - name: test-aws-centos7-{{ cookiecutter.role_name }}
     image: {{ cookiecutter.image_centos7 }}
     platform: centos7
@@ -85,7 +86,9 @@ platforms:
     ssh_user: admin
     groups:
       - debian_family
+{%- endif %}
 
+{% if cookiecutter.windows_platform -%}
   - name: test-aws-Windows2016-{{ cookiecutter.role_name }}
     aws_image_id: {{ cookiecutter.image_windows2016 }}
     platform: windows2016core
@@ -113,6 +116,7 @@ platforms:
     wait_timeout: 1800
     groups:
       - windows
+{%- endif %}
 {% raw -%}
 provisioner:
   name: ansible
