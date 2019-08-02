@@ -140,6 +140,6 @@ verifier:
   name: {{ cookiecutter.verifier_name }}
   options:
     verbose: true
-  directory: ../resources/tests/
+  # directory: ../resources/tests/
   lint:
     name: {{ cookiecutter.verifier_lint_name }}
