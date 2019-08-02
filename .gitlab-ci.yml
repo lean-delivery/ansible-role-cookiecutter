@@ -26,6 +26,15 @@ Lint:
   tags:
     - aws
 
+Docker role from cookiecutter test:
+  stage: deployment test
+  script:
+    - cookiecutter -f --no-input .
+    - cd ansible-role-default_role
+    - molecule test -s default
+  tags:
+    - aws
+
 AWS role from cookiecutter test:
   variables:
     AWS_REGION: us-east-1
@@ -38,7 +47,7 @@ AWS role from cookiecutter test:
   tags:
     - aws
 
-.EPC role from cookiecutter test:
+EPC role from cookiecutter test:
   variables:
     EPC_REGION: EPAM-BY2
   stage: deployment test
