@@ -137,14 +137,12 @@ provisioner:
     create: ../resources/provisioning/AWS/create.yml
     prepare: ../resources/provisioning/AWS/prepare.yml
     destroy: ../resources/provisioning/AWS/destroy.yml
+    verify: ../resources/tests/verify.yml
   lint:
     name: {{ cookiecutter.provisioner_lint_name }}
 scenario:
   name: cloud-aws-direct
 verifier:
   name: {{ cookiecutter.verifier_name }}
-  options:
-    verbose: true
-  # directory: ../resources/tests/
   lint:
     name: {{ cookiecutter.verifier_lint_name }}
