@@ -71,7 +71,7 @@ platforms:
 {%- if cookiecutter.windows_tests == "true" %}
   - name: test-azure-Windows2016-{{ cookiecutter.role_name }}
     platform: windows2016core
-    vm_size: {{ cookiecutter.vm_size }}
+    vm_size: {{ cookiecutter.az_vm_size }}
     az_location: {{ cookiecutter.az_location }}
     az_resource_group_name: {{ cookiecutter.az_resource_group_name }}
     az_virtual_network_name: {{ cookiecutter.az_virtual_network_name }}
@@ -82,7 +82,7 @@ platforms:
 
   - name: test-azure-Windows2019-{{ cookiecutter.role_name }}
     platform: windows2019core
-    vm_size: {{ cookiecutter.vm_size }}
+    vm_size: {{ cookiecutter.az_vm_size }}
     az_location: {{ cookiecutter.az_location }}
     az_resource_group_name: {{ cookiecutter.az_resource_group_name }}
     az_virtual_network_name: {{ cookiecutter.az_virtual_network_name }}
