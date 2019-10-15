@@ -26,7 +26,7 @@ Lint:
   tags:
     - aws
 
-Docker role from cookiecutter test:
+.Docker role from cookiecutter test:
   stage: deployment test
   script:
     - cookiecutter -f --no-input .
@@ -47,7 +47,7 @@ AWS role from cookiecutter test:
   tags:
     - aws
 
-AZURE role from cookiecutter test:
+.AZURE role from cookiecutter test:
   stage: deployment test
   script:
     - cookiecutter -f --no-input .
@@ -57,7 +57,7 @@ AZURE role from cookiecutter test:
   tags:
     - azure
 
-EPC role from cookiecutter test:
+.EPC role from cookiecutter test:
   variables:
     EPC_REGION: EPAM-BY2
   stage: deployment test
