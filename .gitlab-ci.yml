@@ -26,7 +26,7 @@ Lint:
   tags:
     - aws
 
-.Docker role from cookiecutter test:
+Docker role from cookiecutter test:
   stage: deployment test
   script:
     - cookiecutter -f --no-input .
@@ -42,12 +42,12 @@ AWS role from cookiecutter test:
   script:
     - cookiecutter -f --no-input .
     - cd ansible-role-default_role
-    - git clone -b add_centos8 https://github.com/lean-delivery/ansible-molecule-drivers.git molecule/resources/provisioning
+    - git clone https://github.com/lean-delivery/ansible-molecule-drivers.git molecule/resources/provisioning
     - molecule test -s cloud-aws-direct
   tags:
     - aws
 
-.AZURE role from cookiecutter test:
+AZURE role from cookiecutter test:
   stage: deployment test
   script:
     - cookiecutter -f --no-input .
@@ -57,7 +57,7 @@ AWS role from cookiecutter test:
   tags:
     - azure
 
-.EPC role from cookiecutter test:
+EPC role from cookiecutter test:
   variables:
     EPC_REGION: EPAM-BY2
   stage: deployment test
