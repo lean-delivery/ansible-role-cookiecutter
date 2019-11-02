@@ -56,7 +56,7 @@ AZURE role from cookiecutter test:
     - git clone https://github.com/lean-delivery/ansible-molecule-drivers.git molecule/resources/provisioning
     - molecule test -s cloud-azure-direct
   tags:
-    - AZURE
+    - azure
 
 EPC role from cookiecutter test:
   variables:
