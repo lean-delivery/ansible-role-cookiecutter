@@ -26,7 +26,7 @@ Lint:
   tags:
     - lint
 
-Docker role from cookiecutter test:
+.Docker role from cookiecutter test:
   stage: deployment test
   script:
     - cookiecutter -f --no-input .
