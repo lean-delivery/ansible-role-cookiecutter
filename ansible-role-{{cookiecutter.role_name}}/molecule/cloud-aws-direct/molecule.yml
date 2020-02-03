@@ -32,7 +32,7 @@ platforms:
     image: {{ cookiecutter.image_centos7 }}
     platform: centos7
     instance_type: {{ cookiecutter.instance_type }}
-    volume_size: {{ cookiecutter.aws_volume_size }}
+    volume_size: {{ cookiecutter.aws_root_volume_size }}
     region: {{ cookiecutter.aws_region }}
     vpc_subnet_id: {{ cookiecutter.vpc_subnet_id }}
     assign_public_ip: false
