@@ -32,6 +32,7 @@
     "image_windows2016": "ami-00a20f508263efd30",
     "image_windows2019": "ami-0477b9335a5a75438",
     "instance_type": "m5.large",
+    "aws_root_volume_size": 10,
     "spot_price": "0.04",
     "linux_tests": "true",
     "windows_tests": "true",
