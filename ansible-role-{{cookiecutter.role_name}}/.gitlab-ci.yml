@@ -46,7 +46,7 @@ AWS {{ cookiecutter.role_name }}:
   tags:
     - aws
 
-.AZURE {{ cookiecutter.role_name }}:
+AZURE {{ cookiecutter.role_name }}:
   stage: deployment test
   script:
     - molecule test -s cloud-azure-direct
