@@ -38,7 +38,7 @@
     "volume_size_windows": 30,
     "spot_price": "0.05",
     "linux_tests": "true",
-    "windows_tests": "true",
+    "windows_tests": "false",
     "az_location": "northeurope",
     "az_resource_group_name": "epm-ldi",
     "az_virtual_network_name": "epm-ldi-northeurope-vnet",
