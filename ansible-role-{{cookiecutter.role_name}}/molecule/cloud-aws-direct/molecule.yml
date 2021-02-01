@@ -5,9 +5,7 @@ dependency:
     role-file: requirements.yml
 driver:
   name: ec2
-lint: |
-  yamllint .
-  ansible-lint --exclude meta .git
+lint: ansible-lint
 platforms:
 
 {%- if cookiecutter.linux_tests == "true" %}
